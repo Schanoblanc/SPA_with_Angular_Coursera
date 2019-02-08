@@ -1,0 +1,16 @@
+<div class="container" ng-show="fiCtrl.foundItems.length>0">
+        <table class="hovertable">
+          <tr>
+            <th>short name</th>
+            <th>name </th>
+            <th>description</th>
+            <th>Preference</th>
+          </tr>
+          <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';" ng-repeat ="menu in fiCtrl.foundItems" >
+            <td>{{menu.short_name}} </td>
+            <td>{{menu.name}} </td>
+            <td>{{menu.description}}</td>
+            <td><button ng-click="fiCtrl.onRemove({index : $index})"> Don't want this one!</button></td>
+          </tr>
+        </table>
+      </div>
