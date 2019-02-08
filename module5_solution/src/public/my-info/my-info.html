@@ -1,0 +1,37 @@
+<div ng-show="myInfoCtrl.registered" class="text-center">
+    <table class="signUpTable">
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>First Name :</td>
+            <td>{{myInfoCtrl.user.firstName}} </td>
+        </tr>
+        <tr>
+            <td> Last Name : </td>
+            <td>{{myInfoCtrl.user.lastName}} </td>
+
+        </tr>
+        <tr>
+            <td> Email : </td>
+            <td>{{myInfoCtrl.user.email}} </td>
+        </tr>
+        <tr>
+            <td> Phone : </td>
+            <td>{{myInfoCtrl.user.phone}} </td>
+        </tr>
+        <tr>
+            <td>Favorite</td>
+            <td>{{myInfoCtrl.user.favoriteShortname}} 
+                <img ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.user.favoriteShortname}}.jpg" >
+            </td>
+        </tr>
+    </table>
+</div>
+<div ng-show="!myInfoCtrl.registered" class="text-center">
+    <span>
+        Not Yet Rigestered? SignUp Now! <br>
+        <a ui-sref="public.signup">Sign Up Link</a>
+    </span>
+</div>

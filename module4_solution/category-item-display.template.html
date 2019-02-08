@@ -1,0 +1,24 @@
+<a ui-sref="homePage">Home</a> &lt; <a ui-sref="category">Categories</a> &lt; <span>{{detailctrl.itemSummary.itemId}}</span>
+<div>
+    <table>
+        <tr>
+            <th>short name</th>
+            <th>name</th>
+            <th>description</th>
+            <th>price</th>
+        </tr>
+        <tr ng-repeat="item in detailctrl.itemSummary.itemDetail.menu_items">
+            <td>{{item.short_name}}</td>
+            <td> {{item.name}}</td>
+            <td>
+                {{item.description}}
+                <span ng-if="item.description === ''"> ---</span>
+            </td>
+            <td>
+                <span ng-if="item.price_small != null ">{{item.price_small}}</span>
+                <span ng-if="item.price_small != null && item.price_large != null "> ~ </span>
+                <span ng-if="item.price_large != null">{{item.price_large}}</span>
+            </td>
+        </tr>
+    </table>
+</div>
